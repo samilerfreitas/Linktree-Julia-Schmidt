@@ -29,26 +29,26 @@ body {
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 body * {
     font-family: "Inter", sans-serif;
-    color: var(--text-color)
+    color: var(--text-color);
 }
 
 /* Container */
-
 #container {
     width: 100%;
     max-width: 588px;
-    /* margin: top right bottom left*/
     margin: 56px auto 0px;
     padding: 0 24px;
+    min-height: calc(100vh - 56px);
+    display: flex;
+    flex-direction: column;
 }
 
 /* Profile */
-
 #profile {
     text-align: center;
     padding: 24px;
@@ -65,26 +65,24 @@ body * {
 }
 
 /* Switch */
-
 #switch {
     position: relative;
     width: 68px;
     margin: 4px auto;
+    margin-bottom: 20px;
 }
 
 #switch button {
   width: 32px;
   height: 32px;
-  background:white var(--switch-bg-url )no-repeat center;
+  background: white var(--switch-bg-url) no-repeat center;
   border: 0;
   border-radius: 50%;
-
-  position: absolute; /*Sobreposição de camada e começa na posição 0*/
+  position: absolute;
   top: 50%;
   left: 0;
-  z-index: 1; /*Serve para subir a posição do item*/
+  z-index: 1;
   transform: translateY(-50%);
-
   animation: slide-back 0.3s;
 }
 
@@ -101,17 +99,26 @@ body * {
     width: 64px;
     height: 24px;
     background: var(--surface-color);
-    border: px solid var(--stroke-color);
+    border: 1px solid var(--stroke-color);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-radius: 9999px;
 }
 
+/* Section titles */
+.section-title {
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+
+.section-title p {
+    font-weight: 600;
+    line-height: 24px;
+}
+
 /* Links */
-
 ul {
-    list-style: none; /*para retirar os pontos de lista*/
-
+    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -123,82 +130,83 @@ ul li a {
     align-items: center;
     justify-content: center;
     padding: 16px 24px;
-
     background: var(--surface-color);
     border: 1px solid var(--stroke-color);
-    border-radius: 8px; /*redondamento da caixa*/
-    
+    border-radius: 8px;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-
-    text-decoration: none; /*para retirar as linhas abaixo do texto*/
-    font-weight: 500;  /*inserir o tamanho da fonte*/
-
+    text-decoration: none;
+    font-weight: 500;
     transition: 0.2s;
 }
 
-/* pseudo-selctorb*/
 ul li a:hover {
-  background: var(--surface-color-hover);
-  border: 1.5px solid var(--text-color);
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
 }
 
-/* social links*/
+/* Social links */
 #social-links {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-
-  padding: 24px 0;
-
-  font-size: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 24px 0;
+    font-size: 24px;
 }
 
-#social-links a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-
-  transition: 0.2s;
-  border-radius: 50%; 
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    transition: 0.2s;
+    border-radius: 50%; 
 }
+
 #social-links a:hover {
-  background: var(--highlight-color);
+    background: var(--highlight-color);
 }
 
+/* Footer */
 footer {
-  padding: 24px 0;
-  text-align: center;
-  font-size: 14px;
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+    margin-top: auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 1px solid var(--stroke-color);
 }
 
-/* media queries */
+/* Media queries */
 @media (min-width: 700px) {
-  :root {
-    --bg-url: url(./assets/desktop.png);
-  }
+    :root {
+        --bg-url: url(./assets/desktop.png);
+    }
 
-  .light {
-    --bg-url: url(./assets/desktop-light.png)
-  }
+    .light {
+        --bg-url: url(./assets/desktop-light.png);
+    }
 }
 
-/* animations */
+/* Animations */
 @keyframes slide-in {
-  from {
-    left: 0;
-  }
-  to {
-    left: calc(100% - 32px);
-  }
+    from {
+        left: 0;
+    }
+    to {
+        left: calc(100% - 32px);
+    }
 }
 
 @keyframes slide-back {
-  from {
-    left: calc(100% - 32px);
-  }
-  to {
-    left: 0;
-  }
+    from {
+        left: calc(100% - 32px);
+    }
+    to {
+        left: 0;
+    }
 }
