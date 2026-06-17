@@ -57,6 +57,10 @@ O projeto possui duas versões visuais:
 
 <img src="./assets/desktop-light-final.jpeg" alt="DevLinks - Modo Claro">
 
+## 🏷️ Licença
+
+Esse projeto está sob a licença MIT.
+
 ---
 
-Feito com ♥ por Samile Freitas
+Feito com ♥
